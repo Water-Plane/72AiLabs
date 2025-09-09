@@ -133,6 +133,12 @@ const Services: React.FC = () => {
                   className="service-cta"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  onClick={() => {
+                    const contactSection = document.querySelector('#contact');
+                    if (contactSection) {
+                      contactSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                 >
                   Learn More
                   <svg

@@ -159,7 +159,7 @@ const About: React.FC = () => {
                 <img src={logo} alt="72 AI Labs Logo" style={{ width: '60px', height: '60px', borderRadius: '50%' }} />
               </div>
               <h4>Syed Muhammad Samad</h4>
-              <p className="founder-title">Founder 72 AI Labs | Data Scientist</p>
+              <p className="founder-title">Co-Founder 72 AI Labs | Data Scientist</p>
               <p className="founder-description">
                 Syed Muhammad Samad is a Data Scientist and entrepreneur, leading 72 AI Labs with a vision to transform businesses through AI and digital innovation. Focused on innovation, impact, and future-readiness, he is dedicated to building smarter and scalable solutions that empower startups and enterprises in the digital era.
               </p>
@@ -187,7 +187,7 @@ const About: React.FC = () => {
                 <img src={logo} alt="72 AI Labs Logo" style={{ width: '60px', height: '60px', borderRadius: '50%' }} />
               </div>
               <h4>Ali Abbas Abdi</h4>
-              <p className="founder-title">Founder, 72 AI Labs | Data Scientist</p>
+              <p className="founder-title">Co-Founder, 72 AI Labs | Data Scientist</p>
               <p className="founder-description">
                 Ali Abbas Abdi is a Data Scientist and Co-Founder of 72 AI Labs, focused on building intelligent AI models and scalable solutions. With his expertise in data and technology, he ensures the company delivers impactful and future-ready innovations.
               </p>

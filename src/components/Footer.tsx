@@ -28,8 +28,8 @@ const Footer: React.FC = () => {
   };
 
   const socialLinks = [
-    { name: 'LinkedIn', icon: '💼', url: 'https://linkedin.com/in/harshit-tiwari' },
-    { name: 'Instagram', icon: '📷', url: '#' },
+    { name: 'LinkedIn', icon: '💼', url: 'http://www.linkedin.com/in/72ailabs' },
+    { name: 'Instagram', icon: '📷', url: 'https://www.instagram.com/72ailabs' },
     { name: 'Twitter', icon: '🐦', url: '#' },
     { name: 'GitHub', icon: '💻', url: '#' },
   ];
