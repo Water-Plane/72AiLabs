@@ -35,7 +35,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://yourusername.github.io/72ai-labs-landing",
   "eslintConfig": {
     "extends": [
       "react-app",
