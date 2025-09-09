@@ -214,9 +214,9 @@ const Footer: React.FC = () => {
               © {currentYear} 72 AI Labs. All rights reserved.
             </p>
             <div className="footer-bottom-links">
-              <a href="#" className="footer-bottom-link">Privacy Policy</a>
-              <a href="#" className="footer-bottom-link">Terms of Service</a>
-              <a href="#" className="footer-bottom-link">Cookie Policy</a>
+              <button className="footer-bottom-link">Privacy Policy</button>
+              <button className="footer-bottom-link">Terms of Service</button>
+              <button className="footer-bottom-link">Cookie Policy</button>
             </div>
           </div>
         </motion.div>

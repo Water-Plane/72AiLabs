@@ -1,8 +1,7 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Canvas } from '@react-three/fiber';
 import { gsap } from 'gsap';
-import logo from '../assets/logo.png';
+import logo from '../logo.svg';
 // import ParticleBackground from './ParticleBackground';
 // import TypewriterText from './TypewriterText';
 import './Hero.css';
@@ -10,9 +9,6 @@ import './Hero.css';
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
-  const [displayText, setDisplayText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const fullText = "Ideas → Innovation → Impact";
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -54,17 +50,6 @@ const Hero: React.FC = () => {
     }
   }, []);
 
-  // Typewriter effect
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (currentIndex < fullText.length) {
-        setDisplayText(prev => prev + fullText[currentIndex]);
-        setCurrentIndex(prev => prev + 1);
-      }
-    }, 100);
-
-    return () => clearTimeout(timer);
-  }, [currentIndex, fullText]);
 
   const scrollToServices = () => {
     const servicesSection = document.querySelector('#services');
@@ -118,7 +103,6 @@ const Hero: React.FC = () => {
               <span className="hero-title-word">Innovation</span>
               <span className="hero-title-arrow">→</span>
               <span className="hero-title-word">Impact</span>
-              {currentIndex < fullText.length && <span className="typewriter-cursor">|</span>}
             </h1>
 
             {/* Subtitle */}
