@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import logo from '../logo.svg';
+import logo from '../assets/logo.png';
 import './Navigation.css';
 
 const Navigation: React.FC = () => {

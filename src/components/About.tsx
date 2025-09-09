@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './About.css';
-import logo from '../logo.svg';
+import logo from '../assets/logo.png';
 
 const About: React.FC = () => {
   const stats = [

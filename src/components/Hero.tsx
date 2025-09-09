@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
-import logo from '../logo.svg';
+import logo from '../assets/logo.png';
 // import ParticleBackground from './ParticleBackground';
 // import TypewriterText from './TypewriterText';
 import './Hero.css';
