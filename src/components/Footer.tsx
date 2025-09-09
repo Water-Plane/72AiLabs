@@ -28,10 +28,10 @@ const Footer: React.FC = () => {
   };
 
   const socialLinks = [
-    { name: 'LinkedIn', icon: '💼', url: 'http://www.linkedin.com/in/72ailabs' },
-    { name: 'Instagram', icon: '📷', url: 'https://www.instagram.com/72ailabs' },
-    { name: 'Twitter', icon: '🐦', url: '#' },
-    { name: 'GitHub', icon: '💻', url: '#' },
+    { name: 'LinkedIn', icon: 'LinkedIn', url: 'http://www.linkedin.com/in/72ailabs' },
+    { name: 'Instagram', icon: 'Instagram', url: 'https://www.instagram.com/72ailabs' },
+    { name: 'Twitter', icon: 'Projects', url: '#' },
+    { name: 'GitHub', icon: 'Board Members', url: '#' },
   ];
 
   const scrollToSection = (href: string) => {
