@@ -69,7 +69,7 @@ const Contact: React.FC = () => {
   ];
 
   const socialLinks = [
-    { name: 'LinkedIn', icon: '💼', url: 'https://linkedin.com/in/ai72labs' },
+    { name: 'LinkedIn', icon: '💼', url: 'https://linkedin.com/company/ai72labs' },
     { name: 'Instagram', icon: '📷', url: '#' },
     { name: 'Twitter', icon: '🐦', url: '#' },
     { name: 'GitHub', icon: '💻', url: '#' },
