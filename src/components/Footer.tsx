@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import logo from '../logo.svg';
 import './Footer.css';
 
 const Footer: React.FC = () => {
@@ -56,7 +57,7 @@ const Footer: React.FC = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="footer-logo">
-              <img src="/logo.png" alt="72 AI Labs" className="footer-logo-image" />
+              <img src={logo} alt="72 AI Labs" className="footer-logo-image" />
               <span className="logo-text">AI Labs</span>
             </div>
             <p className="company-tagline">Ideas → Innovation → Impact</p>
