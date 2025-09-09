@@ -1,11 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './About.css';
+import logo from '../logo.svg';
 
 const About: React.FC = () => {
   const stats = [
-    { number: '100+', label: 'Projects Delivered' },
-    { number: '50+', label: 'Happy Clients' },
+    { number: '20+', label: 'Projects Delivered' },
+    { number: '14+', label: 'Happy Clients' },
     { number: '24/7', label: 'Support Available' },
     { number: '99%', label: 'Client Satisfaction' },
   ];
@@ -154,14 +155,44 @@ const About: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.6 }}
               whileHover={{ y: -5, scale: 1.02 }}
             >
-              <div className="founder-avatar">👨‍💻</div>
-              <h4>Harshit Tiwari</h4>
-              <p className="founder-title">Co-Founder & CEO</p>
+              <div className="founder-avatar">
+                <img src={logo} alt="72 AI Labs Logo" style={{ width: '60px', height: '60px', borderRadius: '50%' }} />
+              </div>
+              <h4>Syed Muhammad Samad</h4>
+              <p className="founder-title">Founder 72 AI Labs | Data Scientist</p>
               <p className="founder-description">
-                Visionary leader driving AI innovation and strategic growth at 72 AI Labs.
+                Syed Muhammad Samad is a Data Scientist and entrepreneur, leading 72 AI Labs with a vision to transform businesses through AI and digital innovation. Focused on innovation, impact, and future-readiness, he is dedicated to building smarter and scalable solutions that empower startups and enterprises in the digital era.
               </p>
               <motion.a
-                href="https://linkedin.com/in/harshit-tiwari"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="founder-linkedin"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span>💼</span> Connect on LinkedIn
+              </motion.a>
+            </motion.div>
+            
+            <motion.div
+              className="founder-card"
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              whileHover={{ y: -5, scale: 1.02 }}
+            >
+              <div className="founder-avatar">
+                <img src={logo} alt="72 AI Labs Logo" style={{ width: '60px', height: '60px', borderRadius: '50%' }} />
+              </div>
+              <h4>Ali Abbas Abdi</h4>
+              <p className="founder-title">Founder, 72 AI Labs | Data Scientist</p>
+              <p className="founder-description">
+                Ali Abbas Abdi is a Data Scientist and Co-Founder of 72 AI Labs, focused on building intelligent AI models and scalable solutions. With his expertise in data and technology, he ensures the company delivers impactful and future-ready innovations.
+              </p>
+              <motion.a
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="founder-linkedin"
