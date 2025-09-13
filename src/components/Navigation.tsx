@@ -21,13 +21,27 @@ const Navigation: React.FC = () => {
     { name: 'Services', href: '#services' },
     { name: 'About', href: '#about' },
     { name: 'Features', href: '#features' },
-    { name: 'Contact', href: '#contact' },
   ];
+  
+  const contactInfo = {
+    email: '72ailabs@gmail.com',
+    phone: '+91 9129050652',
+    address: 'Lucknow, India'
+  };
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (href.startsWith('#')) {
+      const element = document.querySelector(href);
+      if (element) {
+        const headerOffset = 100; // Adjust this value based on your header height
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
     }
     setIsMobileMenuOpen(false);
   };
@@ -47,8 +61,8 @@ const Navigation: React.FC = () => {
         >
           <img src={logo} alt="72 AI Labs" className="logo-image" />
           <div className="logo-text-container">
-            <span className="logo-text">72 AI Labs</span>
-            <span className="logo-tagline">Ideas → Innovation → Impact</span>
+            <span className="logo-text">72 Ai Labs</span>
+            <span className="logo-tagline desktop-only">Ideas → Innovation → Impact</span>
           </div>
         </motion.div>
 
@@ -111,30 +125,49 @@ const Navigation: React.FC = () => {
         initial={{ opacity: 0, height: 0 }}
         animate={{
           opacity: isMobileMenuOpen ? 1 : 0,
-          height: isMobileMenuOpen ? 'auto' : 0,
+          height: isMobileMenuOpen ? '100vh' : 0,
         }}
         transition={{ duration: 0.3 }}
       >
         <div className="mobile-menu-content">
-          {navItems.map((item, index) => (
-            <motion.a
-              key={item.name}
-              href={item.href}
-              className="mobile-nav-link"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection(item.href);
-              }}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{
-                opacity: isMobileMenuOpen ? 1 : 0,
-                x: isMobileMenuOpen ? 0 : -20,
-              }}
-              transition={{ delay: index * 0.1 }}
-            >
-              {item.name}
-            </motion.a>
-          ))}
+          <div className="mobile-nav-items">
+            {navItems.map((item, index) => (
+              <motion.a
+                key={item.name}
+                href={item.href}
+                className="mobile-nav-link"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(item.href);
+                }}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{
+                  opacity: isMobileMenuOpen ? 1 : 0,
+                  x: isMobileMenuOpen ? 0 : -20,
+                }}
+                transition={{ delay: index * 0.1 }}
+              >
+                {item.name}
+              </motion.a>
+            ))}
+          </div>
+          
+          <div className="mobile-contact-info">
+            <h4>Contact Us</h4>
+            <div className="contact-detail">
+              <span className="contact-icon">✉️</span>
+              <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
+            </div>
+            <div className="contact-detail">
+              <span className="contact-icon">📞</span>
+              <a href={`tel:${contactInfo.phone.replace(/[^0-9+]/g, '')}`}>{contactInfo.phone}</a>
+            </div>
+            <div className="contact-detail">
+              <span className="contact-icon">📍</span>
+              <span>{contactInfo.address}</span>
+            </div>
+          </div>
+          
           <motion.a
             href="#contact"
             className="mobile-nav-cta btn btn-primary"

@@ -1,10 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faInstagram, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 import logo from '../assets/logo.png';
 import './Footer.css';
 
 const Footer: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
   const currentYear = new Date().getFullYear();
+
+  // Show button when page is scrolled down
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener('scroll', toggleVisibility);
+  }, []);
+
+  // Scroll to top handler
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 
   const footerLinks = {
     services: [
@@ -28,10 +53,10 @@ const Footer: React.FC = () => {
   };
 
   const socialLinks = [
-    { name: 'LinkedIn', icon: 'LinkedIn', url: 'https://www.linkedin.com/company/72ailabs/' },
-    { name: 'Instagram', icon: 'Instagram', url: 'https://www.instagram.com/company/72ailabs' },
-    { name: 'Twitter', icon: 'Projects', url: '#' },
-    { name: 'GitHub', icon: 'Board Members', url: '#' },
+    { name: 'LinkedIn', icon: faLinkedin, url: 'https://www.linkedin.com/company/72ailabs/' },
+    { name: 'Instagram', icon: faInstagram, url: 'https://www.instagram.com/company/72ailabs' },
+    { name: 'Twitter', icon: faTwitter, url: '#' },
+    { name: 'GitHub', icon: faGithub, url: '#' },
   ];
 
   const scrollToSection = (href: string) => {
@@ -45,6 +70,17 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="footer">
+      {/* Back to Top Button */}
+      <button
+        onClick={scrollToTop}
+        className={`back-to-top ${isVisible ? 'visible' : ''}`}
+        aria-label="Back to top"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 19V5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M5 12L12 5L19 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </button>
       <div className="container">
         {/* Main Footer Content */}
         <div className="footer-content">
@@ -75,7 +111,7 @@ const Footer: React.FC = () => {
                   whileTap={{ scale: 0.9 }}
                   title={social.name}
                 >
-                  <span>{social.icon}</span>
+                  <FontAwesomeIcon icon={social.icon} />
                 </motion.a>
               ))}
             </div>
